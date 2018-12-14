@@ -1,10 +1,12 @@
 package com.projetpoe.demo.Repository;
 
-import com.projetpoe.demo.Model.utilisateur;
+import com.projetpoe.demo.Model.Utilisateur;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface repositoryUtilisateur extends PagingAndSortingRepository <utilisateur, Integer>{
+public interface repositoryUtilisateur extends PagingAndSortingRepository <Utilisateur, Integer>{
 
-    utilisateur findById(String s);
-    utilisateur findByNom(String pseudo);
+    Utilisateur findById(Integer id);
+    Utilisateur findByNom(String pseudo);
+
+
 }

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-    public class utilisateur {
+    public class Utilisateur {
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         private Integer id;
@@ -15,7 +15,7 @@ import java.util.Set;
 
         private String password;
 
-        public utilisateur(Integer id, String pseudo, String password) {
+        public Utilisateur(Integer id, String pseudo, String password) {
             this.id = id;
             this.pseudo = pseudo;
             this.password = password;
@@ -45,15 +45,26 @@ import java.util.Set;
             this.password = password;
         }
 
-        @OneToMany( mappedBy = "utilisateur" )
-        private List<historique> historiques;
+        /*@OneToMany( mappedBy = "Utilisateur" )
+        private List<Historique> historiques;
 
-    public List<historique> getHistoriques() {
+    public List<Historique> getHistoriques() {
+        return historiques;
+    }*/
+
+    @OneToMany (mappedBy = "utilisateur", fetch = FetchType.EAGER) //Declaration de relation entre un utilisateur et plusieurs historiques
+    private List <Historique> historiques; //déclaration de la liste d'historiques liés à l'utilisateur
+
+    public List<Historique> getHistoriques() {
         return historiques;
     }
 
+    public void setHistoriques(List<Historique> historiques) {
+        this.historiques = historiques;
+    }
 
-    public utilisateur(){
+
+    public Utilisateur(){
 
     }
 }
