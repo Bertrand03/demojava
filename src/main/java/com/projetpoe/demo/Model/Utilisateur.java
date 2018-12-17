@@ -1,5 +1,7 @@
 package com.projetpoe.demo.Model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.List;
@@ -53,6 +55,7 @@ import java.util.Set;
     }*/
 
     @OneToMany (mappedBy = "utilisateur", fetch = FetchType.EAGER) //Declaration de relation entre un utilisateur et plusieurs historiques
+    @JsonManagedReference
     private List <Historique> historiques; //déclaration de la liste d'historiques liés à l'utilisateur
 
     public List<Historique> getHistoriques() {

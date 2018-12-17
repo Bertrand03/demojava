@@ -1,5 +1,7 @@
 package com.projetpoe.demo.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -60,6 +62,7 @@ import javax.persistence.*;
 
     @ManyToOne //Fin de la relation entre plusieurs historiques et un utilisateur
     @JoinColumn( name = "id_joueur") //Déclaration de la colonne servant de clé étrangère
+    @JsonBackReference
     private Utilisateur utilisateur; //Déclaration de la table de début de relation
 
     public Utilisateur getUtilisateur() {

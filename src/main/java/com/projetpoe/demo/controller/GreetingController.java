@@ -1,6 +1,8 @@
-package com.projetpoe.demo.Hello;
+package com.projetpoe.demo.controller;
 
 import java.util.concurrent.atomic.AtomicLong;
+
+import com.projetpoe.demo.Hello.Greeting;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;

@@ -5,8 +5,8 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface repositoryUtilisateur extends PagingAndSortingRepository <Utilisateur, Integer>{
 
-    Utilisateur findById(Integer id);
-    Utilisateur findByNom(String pseudo);
+    Utilisateur findById(Integer idUtilisateur);
+    //Utilisateur findByPseudo(String pseudo);
 
 
 }

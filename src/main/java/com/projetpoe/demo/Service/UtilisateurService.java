@@ -38,9 +38,14 @@ public class UtilisateurService{
         }
     }
 
-    public Utilisateur recupereutilisateur (Integer id){
-        Utilisateur u = utilisateurrepository.findById(id);
+    public Utilisateur recupereutilisateur (Integer idUtilisateur) throws Exception{
+        Utilisateur u = utilisateurrepository.findById(idUtilisateur);
         return u;
+    }
+
+
+    public Utilisateur findById(Integer idUtilisateur) {
+        return findById(idUtilisateur);
     }
 
 }
